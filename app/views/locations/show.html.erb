@@ -4,7 +4,7 @@
  <p>
   <strong>Today Forecast For City <%=@city%> Is:</strong>
   <br />
-  <%= @weather.round %>&deg;C
+  <%= @weather.round %>&deg;C (<%= @main %> - <%= @desc %>)
   <%= image_tag "http://openweathermap.org/img/w/#{@icon}.png" %>
   <br />
   <small> To check what you need to wear today:
@@ -16,5 +16,5 @@
   <p> <%= @error %></p>
   <%end%>
 <%= link_to 'Back To Search', root_path %>
-  
+
 </div>

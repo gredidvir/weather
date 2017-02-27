@@ -18,7 +18,10 @@ class LocationsController < ApplicationController
       @all_details = OpenWeather::Forecast.city(@city, options)
       if @all_details["city"]
         @weather = @all_details["list"][0]["main"]["temp"] 
-        @icon = @all_details["list"][0]["weather"][0]["icon"]
+        @weather_deatails = @all_details["list"][0]["weather"][0]
+        @main = @weather_deatails["main"]
+        @desc = @weather_deatails["description"]
+        @icon = @weather_deatails["icon"]
         @city = @all_details["city"]["name"]
         @lon = @all_details["city"]["coord"]["lon"]
         @lat = @all_details["city"]["coord"]["lat"]
