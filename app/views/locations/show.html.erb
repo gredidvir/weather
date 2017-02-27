@@ -1,0 +1,20 @@
+
+ <div class='search-div'>
+ <% if !@error %>
+ <p>
+  <strong>Today Forecast For City <%=@city%> Is:</strong>
+  <br />
+  <%= @weather.round %>&deg;C
+  <%= image_tag "http://openweathermap.org/img/w/#{@icon}.png" %>
+  <br />
+  <small> To check what you need to wear today:
+  <%= link_to "Press here", "http://www.dressbyweather.com/#{@lon}/#{@lat}" %>
+  </small>
+</p>
+
+<%else%>
+  <p> <%= @error %></p>
+  <%end%>
+<%= link_to 'Back To Search', root_path %>
+  
+</div>

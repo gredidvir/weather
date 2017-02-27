@@ -1,0 +1,13 @@
+<div class="search-div">
+  <h1>Forecast</h1>
+
+  <div>
+    <p>Write your city name and check the weather today</p>
+  </div>
+  <div>
+    <%= form_tag "/locations/show", :method => :get do %>
+      <%= text_field_tag "location", "", placeholder: "Enter your city name"%>
+      <%= submit_tag "Check Weather" %>
+    <% end %>  
+  </div>
+</div>
